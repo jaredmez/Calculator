@@ -1,0 +1,61 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+    /* the code above globally adds 
+    border-box, this helps set width to include
+    padding & border into the equation*/
+
+    background-color: rgb(226, 239, 243);
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    margin:0;
+    padding-top: 20px;
+    height: 75px;
+    font-size: 200%;
+    margin-bottom: 50px;
+}
+
+#calc-shell {
+    display:flex;
+    flex-flow: row wrap;
+    background-color: rgb(27, 26, 26);
+    width:450px;
+    height:500px;
+    margin:auto;
+    justify-content: space-around;
+    align-items:stretch;
+}
+
+#calc-shell div{
+    background: rgb(78, 77, 77);
+    min-width: 100px;
+    border-radius: 8px;
+    margin: 3px 3px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#screen {
+    width:400px;
+    height:150px;
+    
+}
+
+#clear {
+    width:300px;
+}
+
+#zero {
+    width:200px;
+}
