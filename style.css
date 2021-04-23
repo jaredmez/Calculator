@@ -45,23 +45,27 @@ h1 {
     color: whitesmoke;
     text-align: center;
 }
-#calc-shell button{
+button{
     background: rgb(78, 77, 77);
-    min-width: 100px;
+    width: 100px;
+    height: 55px;
     border-radius: 8px;
     margin: 3px 3px;
     color: whitesmoke;
     text-align: center;
+    font-size: 20px;
 }
 .display {
     position:absolute;
     bottom:0;
+    right:0;
+    font-size: 300%;
 }
 
 #screen {
     width:400px;
     height:150px;
-    
+    position: relative;
 }
 
 #clear {
@@ -72,6 +76,7 @@ h1 {
     width:200px;
 }
 
-#divide #multiply {
+#divide, #multiply, #subtract, #add, #equals {
     background:orange;
+    font-size: 30px;
 }
