@@ -8,8 +8,6 @@ function subtract(num1,num2) {
     return Math.abs(num1-num2);}
 
 function multiply(num1, num2) {
-    console.log(num1);
-    console.log(num2);
     return num1*num2;}
 
 function divide(dividend, divisor){
@@ -58,6 +56,15 @@ operators.forEach(element => element.addEventListener('click',currentOp))
 var equals = document.querySelector('#equals');
 equals.addEventListener('click',isReadyForOp);
 
+//add event listenter to clear
+var clearout = document.querySelector('#clear');
+clearout.addEventListener('click', () => {
+    currentNumOne = '';
+    currentNumTwo = '';
+    currentOperator = '';
+    numDisplay('');
+})
+
 function currentOp(e) {
     currentOperator = e.target.textContent;
     console.log(currentOperator);
@@ -79,17 +86,17 @@ function isReadyForOp(e) {
     if (currentNumTwo.length >=1) {
         switch (currentOperator) {
             case '+':
-                (operate('+',currentNumOne, currentNumOne))
+                numDisplay(operate('+',Number(currentNumOne), Number(currentNumTwo)))
                 break;
             case '-':
-                subtract(num1,num2);
+                numDisplay(operate('-',currentNumOne, currentNumTwo))
                 break;
             case 'X':
                 numDisplay(operate('*',currentNumOne, currentNumTwo))
                 break;
             
             case '/':
-                divide(num1,num2);
+                numDisplay(operate('/',currentNumOne, currentNumTwo))
                 break;
         }
 
