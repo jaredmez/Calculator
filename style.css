@@ -45,6 +45,18 @@ h1 {
     color: whitesmoke;
     text-align: center;
 }
+#calc-shell button{
+    background: rgb(78, 77, 77);
+    min-width: 100px;
+    border-radius: 8px;
+    margin: 3px 3px;
+    color: whitesmoke;
+    text-align: center;
+}
+.display {
+    position:absolute;
+    bottom:0;
+}
 
 #screen {
     width:400px;
@@ -58,4 +70,8 @@ h1 {
 
 #zero {
     width:200px;
+}
+
+#divide #multiply {
+    background:orange;
 }
