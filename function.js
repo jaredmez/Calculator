@@ -5,13 +5,22 @@ function add(num1, num2){
     return num1+num2;}
 
 function subtract(num1,num2) {
-    return Math.abs(num1-num2);}
+    return (num1-num2);}
 
 function multiply(num1, num2) {
     return num1*num2;}
 
 function divide(dividend, divisor){
-    return dividend/divisor;}
+    if (dividend % divisor != 0) {
+        result = dividend/divisor;
+        if (countDecimals(result)>8){
+            return result.toFixed(8);
+        }
+        else
+        return result;
+    }
+    else return dividend/divisor;
+}
 
 function operate(opr, num1, num2) {
     switch (opr) {
@@ -33,11 +42,13 @@ function operate(opr, num1, num2) {
 var currentNumOne ='';
 var currentOperator = '';
 var currentNumTwo='';
+let currentVal='';
 
 
 function numDisplay(numD) {
     var displayEl= document.querySelector('.display');
     displayEl.textContent=numD;
+    currentVal=numD;
 }
 
 //add event listener to numbers
@@ -66,6 +77,14 @@ clearout.addEventListener('click', () => {
 })
 
 function currentOp(e) {
+    if (currentOperator.length ==1 && currentNumTwo.length >= 1) {
+        //var displayEl= document.querySelector('.display');
+        isReadyForOp();
+        currentNumOne = currentVal;
+        currentNumTwo='';
+        console.log(currentNumOne);
+        currentOperator = e.target.textContent;
+    }
     currentOperator = e.target.textContent;
     console.log(currentOperator);
 }
@@ -81,7 +100,7 @@ function numCheck(e){
     }
 }
 
-function isReadyForOp(e) {
+function isReadyForOp() {
 
     if (currentNumTwo.length >=1) {
         switch (currentOperator) {
@@ -96,10 +115,27 @@ function isReadyForOp(e) {
                 break;
             
             case '/':
+                if (currentNumTwo == 0) {
+                    zeroDivsor();
+                }
+                else {
                 numDisplay(operate('/',currentNumOne, currentNumTwo))
+                }
                 break;
         }
 
     }
 
+}
+
+var countDecimals = function (value) { 
+    if ((value % 1) != 0) 
+        return value.toString().split(".")[1].length;  
+    return 0;
+};
+
+function zeroDivsor() {
+    var displayEl= document.querySelector('.display');
+    displayEl.textContent='Can\'t divide by 0';
+    currentNumTwo='';
 }
