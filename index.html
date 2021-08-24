@@ -1,23 +1,17 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-  <title>Calculator</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <body>
+    <h1>
+      CALCULATOR
+    </h1>
 
-  <!-- <link rel="stylesheet" href="reset.css"> -->
-  <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-  <h1>
-    The Calculator Page
-  </h1>
- 
     <div id='calc-shell'>
       <div id='screen'><div class='display'></div> </div>
       <button type="button" id='clear'>CLEAR</button>
@@ -36,9 +30,9 @@
       <button type="button" id ='add' class='operator'>+</button>
       <button type="button" id ='zero' class='number'>0</button>
       <button type="button" id ='decimal'>.</button>
-      <button type="button" id ='equals'>=</button>
+      <button type="button" id ='equals' class='operator'>=</button>
     </div>
 
-    <script type="text/javascript" src="function.js"></script>
-</body>
+      <script type="text/javascript" src="function.js"></script>
+  </body>
 </html>
