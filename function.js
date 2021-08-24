@@ -2,18 +2,21 @@
 
 
 function add(num1, num2){
-    return num1+num2;}
+    return num1 + num2;
+}
 
-function subtract(num1,num2) {
-    return (num1-num2);}
+function subtract(num1, num2) {
+    return (num1 - num2);
+}
 
 function multiply(num1, num2) {
-    return num1*num2;}
+    return num1 * num2;
+}
 
 function divide(dividend, divisor){
     if (dividend % divisor != 0) {
         result = dividend/divisor;
-        if (countDecimals(result)>8){
+        if (countDecimals(result) > 8){
             return result.toFixed(8);
         }
         else
@@ -28,47 +31,47 @@ function operate(opr, num1, num2) {
             return add(num1, num2);
             break;
         case '-':
-            return subtract(num1,num2);
+            return subtract(num1, num2);
             break;
         case '*':
-            return multiply(num1,num2);
+            return multiply(num1, num2);
             break;
         
         case '/':
-            return divide(num1,num2);
+            return divide(num1, num2);
             break;
     }
 }
-var currentNumOne ='';
-var currentOperator = '';
-var currentNumTwo='';
-let currentVal='';
+let currentNumOne = '';
+let currentOperator = '';
+let currentNumTwo = '';
+let currentVal = '';
 
 
 function numDisplay(numD) {
-    var displayEl= document.querySelector('.display');
-    displayEl.textContent=numD;
-    currentVal=numD;
+    let displayEl = document.querySelector('.display');
+    displayEl.textContent = numD;
+    currentVal = numD;
 }
 
 //add event listener to numbers
-var numButtons = Array.from(document.getElementsByClassName('number'));
-var displayEl= document.querySelector('.display');
+let numButtons = Array.from(document.getElementsByClassName('number'));
+let displayEl = document.querySelector('.display');
 
-for (var i in numButtons){
-    numButtons[i].addEventListener("click",numCheck)
+for (let i in numButtons){
+    numButtons[i].addEventListener("click", numCheck)
 }
 
 //add event listener to operators
-var operators = Array.from(document.getElementsByClassName('operator'));
-operators.forEach(element => element.addEventListener('click',currentOp))
+let operators = Array.from(document.getElementsByClassName('operator'));
+operators.forEach(element => element.addEventListener('click', currentOp))
 
 //add event listenter to equals
-var equals = document.querySelector('#equals');
-equals.addEventListener('click',isReadyForOp);
+let equals = document.querySelector('#equals');
+equals.addEventListener('click', isReadyForOp);
 
 //add event listenter to clear
-var clearout = document.querySelector('#clear');
+let clearout = document.querySelector('#clear');
 clearout.addEventListener('click', () => {
     currentNumOne = '';
     currentNumTwo = '';
@@ -77,11 +80,10 @@ clearout.addEventListener('click', () => {
 })
 
 function currentOp(e) {
-    if (currentOperator.length ==1 && currentNumTwo.length >= 1) {
-        //var displayEl= document.querySelector('.display');
+    if (currentOperator.length == 1 && currentNumTwo.length >= 1) {
         isReadyForOp();
         currentNumOne = currentVal;
-        currentNumTwo='';
+        currentNumTwo ='';
         currentOperator = e.target.textContent;
     }
     currentOperator = e.target.textContent;
@@ -100,16 +102,16 @@ function numCheck(e){
 
 function isReadyForOp() {
 
-    if (currentNumTwo.length >=1) {
+    if (currentNumTwo.length >= 1) {
         switch (currentOperator) {
             case '+':
-                numDisplay(operate('+',Number(currentNumOne), Number(currentNumTwo)))
+                numDisplay(operate('+', Number(currentNumOne), Number(currentNumTwo)))
                 break;
             case '-':
-                numDisplay(operate('-',currentNumOne, currentNumTwo))
+                numDisplay(operate('-', currentNumOne, currentNumTwo))
                 break;
             case 'X':
-                numDisplay(operate('*',currentNumOne, currentNumTwo))
+                numDisplay(operate('*', currentNumOne, currentNumTwo))
                 break;
             
             case '/':
@@ -126,14 +128,14 @@ function isReadyForOp() {
 
 }
 
-var countDecimals = function (value) { 
+let countDecimals = function (value) { 
     if ((value % 1) != 0) 
         return value.toString().split(".")[1].length;  
     return 0;
 };
 
 function zeroDivsor() {
-    var displayEl= document.querySelector('.display');
-    displayEl.textContent='Can\'t divide by 0';
-    currentNumTwo='';
+    let displayEl = document.querySelector('.display');
+    displayEl.textContent = 'Can\'t divide by 0';
+    currentNumTwo = '';
 }
