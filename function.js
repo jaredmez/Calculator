@@ -82,11 +82,9 @@ function currentOp(e) {
         isReadyForOp();
         currentNumOne = currentVal;
         currentNumTwo='';
-        console.log(currentNumOne);
         currentOperator = e.target.textContent;
     }
     currentOperator = e.target.textContent;
-    console.log(currentOperator);
 }
 
 function numCheck(e){
