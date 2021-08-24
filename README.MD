@@ -9,4 +9,4 @@ This project is a calculator with basic functionality (add, subtract, divide, mu
 * Javascript ES6
 
 ### Live Demo
-[Click Here] for Demo (https://jaredmez.github.io/Calculator/)
+[Click Me](https://jaredmez.github.io/Calculator/) for Demo 
