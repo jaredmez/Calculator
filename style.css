@@ -28,6 +28,15 @@ h1 {
     border-bottom: 1px solid rgb(76, 77, 78);
 }
 
+.calc-container {
+    background-color: black;
+    height: 100%;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 40px;
+}
+
 #calc-shell {
     display:flex;
     flex-flow: row wrap;
@@ -37,6 +46,7 @@ h1 {
     margin:auto;
     justify-content: space-around;
     align-items:stretch;
+    border-radius: 20px;
 }
 
 #calc-shell div{
