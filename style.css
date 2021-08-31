@@ -12,6 +12,8 @@
 body {
     margin:0;
     padding:0;
+    display:flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -100,4 +102,22 @@ button:hover {
 
 .operator:hover {
     background-color: rgb(240, 213, 163);
+}
+
+footer {
+    font-family:'Courier New', Courier, monospace;
+    height: 50px;
+    width: 100%; 
+    margin-top: 100px;
+    border-top: 1px solid rgb(76, 77, 78);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+a {
+    display: block;
+    margin-bottom: 10px;
 }
